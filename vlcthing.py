@@ -2,7 +2,7 @@ import requests,math
 from bs4 import BeautifulSoup
 import sys
 try:
-  r = requests.get('http://localhost:8080/requests/status.xml', auth=('', 'aaaa'))
+  r = requests.get('http://localhost:8080/requests/status.xml', auth=('', 'password_here_leave_username_blank'))
   soup = BeautifulSoup(r.text)
   length = float(soup.length.string)
   percent = float(soup.position.string)
