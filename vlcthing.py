@@ -39,7 +39,7 @@ vlcy = Y
 vlcw = WIDTH
 vlch = HEIGHT
 
-child = subprocess.Popen("zenity --scale --text='Zoom' --min-value=0 --max-value=100 --step=5 --value=100", shell=True, stdout=subprocess.PIPE)
+child = subprocess.Popen("zenity --entry --text 'Zoom' --entry-text='100'", shell=True, stdout=subprocess.PIPE)
 zoom = float(child.stdout.read()) * 0.01
 
 
@@ -54,5 +54,5 @@ bottom = top + vlch - border - bottom_menu - top_menu
 #subprocess.Popen("xdotool mousemove {0} {1}".format(right,bottom), shell=True, stdout=subprocess.PIPE)
 xp = round(float(mousex - left)/float(right-left),2)
 yp = round(float(mousey - top)/float(bottom-top),2)
-print zoom,xp,yp,timecode
+print "{0} {1} {2} {3}".format(zoom,xp,yp,timecode)
 
